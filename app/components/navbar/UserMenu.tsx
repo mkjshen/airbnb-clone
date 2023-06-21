@@ -19,7 +19,7 @@ const UserMenu = () => {
         <div
           onClick={() => {}}
           className="hidden md:block text-sm py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer">
-          Rent Out Your Home!
+          Airbnb your home
         </div>
         <div
           onClick={toggleOpen}
