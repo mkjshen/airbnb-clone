@@ -19,7 +19,7 @@ import { IoDiamond } from "react-icons/io5"
 import CategoryBox from "../CategoryBox";
 import { usePathname, useSearchParams } from "next/navigation";
 
-export const catagories = [
+export const categories = [
   {
     label: "Beach",
     icon: TbBeach,
@@ -111,7 +111,7 @@ const Categories = () => {
   return (
     <Container>
       <div className="pt-4 flex items-center justify-between overflow-x-auto">
-        {catagories.map((item) => (
+        {categories.map((item) => (
           <CategoryBox
             key={item.label}
             label={item.label}
