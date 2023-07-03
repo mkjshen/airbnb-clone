@@ -7,9 +7,10 @@ import { format } from "date-fns";
 
 import useCountries from "@/app/hooks/useCountries";
 import { SafeUser } from "@/app/types";
-import { Listing, Reservation } from "@prisma/client";
+
 import HeartButton from "../HeartButton";
 import Button from "../Button";
+import { Listing, Reservation } from "@prisma/client";
 
 interface ListingCardProps {
   data: Listing;
@@ -45,7 +46,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
 
       onAction?.(actionId);
     },
-    [onAction, actionId, disabled]
+    [disabled, onAction, actionId]
   );
 
   const price = useMemo(() => {
@@ -66,6 +67,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
 
     return `${format(start, "PP")} - ${format(end, "PP")}`;
   }, [reservation]);
+
   return (
     <div
       onClick={() => router.push(`/listings/${data.id}`)}
@@ -74,9 +76,9 @@ const ListingCard: React.FC<ListingCardProps> = ({
         <div className="aspect-square w-full relative overflow-hidden rounded-xl">
           <Image
             fill
-            alt="Listing"
-            src={data.imageSrc}
             className="object-cover h-full w-full group-hover:scale-110 transition"
+            src={data.imageSrc}
+            alt="Listing"
           />
           <div className="absolute top-3 right-3">
             <HeartButton listingId={data.id} currentUser={currentUser} />
