@@ -1,4 +1,3 @@
-import { format } from "path";
 import countries from "world-countries";
 
 const formattedCountries = countries.map((country) => ({
@@ -14,7 +13,7 @@ const useCountries = () => {
 
   const getByValue = (value: string) => {
     return formattedCountries.find((item) => {
-      item.value == value;
+      item.value === value;
     });
   };
 
