@@ -51,6 +51,7 @@ model Listing {
   description   String
   imageSrc      String
   createdAt     DateTime @default(now())
+  category      String
   roomCount     Int
   bathroomCount Int
   guestCount    Int
@@ -67,7 +68,7 @@ model Reservation {
   userId     String   @db.ObjectId
   listingId  String   @db.ObjectId
   startDate  DateTime
-  endData    DateTime
+  endDate    DateTime
   totalPrice Int
   createdAt  DateTime @default(now())
   User       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
