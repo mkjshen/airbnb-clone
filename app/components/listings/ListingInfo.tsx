@@ -21,7 +21,7 @@ interface ListingInfoProps {
     icon: IconType;
     label: string;
     description: string;
-  } | null;
+  } | undefined;
   locationValue: string;
 }
 
@@ -62,7 +62,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
       <hr />
       <div className="text-lg font-light text-neutral-500">{description}</div>
       <hr />
-    <Map center={coordinates} />
+      <Map center={coordinates} />
     </div>
   );
 };
